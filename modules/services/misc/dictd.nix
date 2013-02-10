@@ -51,7 +51,7 @@ with pkgs.lib;
 
     jobs.dictd =
       { description = "DICT.org Dictionary Server";
-        startOn = "filesystem";
+        startOn = "startup";
         environment = { LOCALE_ARCHIVE = "/run/current-system/sw/lib/locale/locale-archive"; };
         daemonType = "fork";
         exec = "${pkgs.dict}/sbin/dictd -s -c ${dictdb}/share/dictd/dictd.conf --locale en_US.UTF-8";
